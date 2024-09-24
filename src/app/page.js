@@ -4,7 +4,7 @@ import Home from "./pages/home";
 
 export default function Index() {
   return (
-    <div >
+    <div>
       <Home/>
     </div>
   );

@@ -1,6 +1,13 @@
-body{
+
+ body{
     margin: 0px;
-    background-image: url('./components/img/fundo.png');
-    background-size: contain;
-    background-attachment: fixed;
+    padding: 0px 0px;
+    background-color: #edf292 ;
+}
+div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
 }

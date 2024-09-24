@@ -1,23 +1,52 @@
-p,h1,h2,h3{
-    margin:0px
+@font-face {
+    font-family: Montserrat-regular;
+    src: url('../components/fonts/Montserrat-Regular.ttf');
+}
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url('../components/fonts/Montserrat-Bold.ttf');
+}
+p{
+    margin:0px;
+    font-family: Montserrat-regular;
+}
+h3{
+    margin:2vw 0px;
+    font-size: 5vw;
+    font-family: Montserrat-Bold;
+
 }
 a{
     position: absolute;
     bottom: 0px;
     width: 100%;
     height: 10vw;
-    background-color: antiquewhite;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: white;
+    transition: 0.3s;
+    visibility: hidden;
 }
-a:hover{
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    animation-duration: 10s;
+button{
+    margin-top: 2vw;
+    width: 25vw;
+    height: 8vw;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 25px;
+    transition: 0.3s;
 }
+button:hover{
+    background-color: #697a08;
+    color: white;
+    transition: 0.3s;
+}
+
 
 .flex{
     display: flex;
@@ -35,27 +64,313 @@ a:hover{
     box-sizing: border-box;
 }
 
-.card-coutry{
+.logo-container{
+    width: 100%;
+    background: linear-gradient(to bottom ,#a5c00c , #edf292 ) ;
+    height: 50vw;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 20vw 0vw;
+   margin-bottom: 5vw;
+
+}
+.logo-container h1{
+    font-family: Montserrat-Bold;
+    font-size: 8vw;
+    margin: 2vw 0vw;
+    margin-bottom: 5vw;
+
+}
+.logo-container p{
+    text-align: center;
+    font-size: 4vw;
+
+}
+.contain-all-info{
+    border-radius: 25px;
+    background-color: white;
+    padding: 5vw 0vw;
+}
+.container-search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-search input{
+    width: 70%;
+    outline: none;
+    height: 10vw;
+    border-radius: 30px;
+    border: 1px solid ;
+    transition: 0.1s;
+    margin: 2vw 0px;
+    text-align: center;
+    background: url('../components/img/search.svg') no-repeat scroll 2vw 2.8vw ;
+    background-size: 5vw;
+    background-color: white;
+}
+.container-search input:focus{
     width: 80%;
-    background-color: rgba(255, 196, 196, 0.418);
-    height: 90vw;
+    transition: 0.1s;
+    background-image: none;
+    border-color: #a5c00c;
+    background-color: white;
+    transform: translateY(-2vw);
+    box-shadow: 0px 3px 4px grey;
+}
+.container-search select{
+    width: 45vw;
+    height: 10vw;
+    border-radius: 25px;
+    transition: 0.1s;
+    text-align: center;
+    background: url('../components/img/sort-down.svg') no-repeat scroll 2vw 2.5vw ;
+    background-size: 5vw;
+    background-color: white;
+    padding-left: 3vw;
+}
+.container-search select:focus{
+    width: 50vw;
+    border-color: #a5c00c;
+    outline: none;
+    transition: 0.1s;
+    appearance: none;
+    background-image: none;
+    background-color: white;
+}
+
+
+.container-country{
+ width: 90%;
+ border: 1px solid #697a08;
+ border-radius: 25px;
+ margin: 5vw 0vw;
+ padding-bottom: 5vw;
+
+}
+.container-filters{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 5vw;
+}
+.container-filters img{
+    width: 5vw;
+    height: fit-content;
+    margin-right: 1vw;
+    margin-top: 2vw;
+}
+
+.container-filters select{
+    width: 22vw;
+    border-radius: 200px;
+    height: 10vw;
+    transition: 0.1s;
+    outline: none;
+    text-align: center;
+}
+.container-filters select:focus{
+    width: 26vw;
+    border-color: #a5c00c;
+    transition: 0.1s;
+    appearance: none;
+}
+.card-coutry{
+    width: 65vw;
+    background-color: #ffffff;
+    height: 80vw;
     margin: 5vw 0px;
     font-size: 5vw;
     border-radius: 15px;
     position: relative;
     transform: translateY(2vw);
-    transition: 0.5s;
-    box-shadow: 0px 0px 0px rgb(94, 94, 94);
+    transition: 0.3s;
+    box-shadow: 0px 2px 5px #8d8d8d;
 }
+
 .card-coutry:hover{
     transform: translateY(-2vw);
-    box-shadow: 0px 10px 5px rgb(187, 187, 187);
-    transition: 0.5s;
-    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 2px 10px #a5c00c;
+    transition: 0.3s;
+    background-color: #edf292;
+    height: 92vw;
+
+}
+.card-coutry:hover a{
+    transition: 0.3s;
+    visibility: visible;
+    color: black;
+
+}
+.card-coutry:hover a:hover{
+    transition: 0.3s;
+    visibility: visible;
+    color: white;
+    background-color: #a5c00c;
+
+}
+.card-coutry label {
+    width: 70%;
+    text-align:  center;
+    border-bottom: 1px solid;
+    padding-bottom: 1vw;
+    margin: 1vw 0px;
+    font-family: Montserrat-Bold;
+    font-size: 4vw;
 }
 
 .img-card-coutry{
     width: 100%;
+    height: 40vw;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    object-fit: cover;
+}
+
+@media (min-width: 550px) {
+    .logo-container{
+        height: 20vw;
+        padding: 5vw 0vw;
+        margin-bottom: 0vw;
+    }
+    .logo-container h1{
+        font-family: Montserrat-Bold;
+        font-size: 5vw;
+        margin: 0vw 0vw;
+        margin-bottom: 0vw;
+    }
+    .logo-container p{
+        font-size: 2vw;
+        margin: 2vw 0vw
+    }
+
+    .contain-all-info{
+        width: 98%;
+        padding: 1vw 0vw;
+    }
+    .container-search input{
+        width: 50%;
+        height: 2.5vw;
+        margin: 1vw 0px;
+        background: url('../components/img/search.svg') no-repeat scroll 0.8vw 0.4vw ;
+        background-size: 2vw;
+        font-size: 1.2vw;
+    }
+    .container-search input:focus{
+        transform: translateY(0vw);
+        width: 60%
+    }
+    .container-search select{
+        width: 15vw;
+        height: 2.2vw;
+        background: url('../components/img/sort-down.svg') no-repeat scroll 0.5vw 0vw ;
+        background-size: 2vw;
+        padding-left: 1vw
+    }
+    .container-search select:focus{
+        width: 20vw;
+    }
+    
+    .container-country{
+        width: 95%;
+        margin: 2vw 0vw;
+        padding-bottom: 2vw;
+    }
+    .container-filters{
+        margin-top: 1vw;
+        justify-content: center;
+    }   
+    .container-filters img{
+        width: 2.5vw;
+        height: fit-content;
+        margin-right: 1vw;
+        margin-top: 0vw;
+    }
+    .container-filters select{
+        width: 12vw;
+        border-radius: 200px;
+        height: 2.5vw;
+        transition: 0.1s;
+        margin-left: 1vw;
+    }
+    .container-filters select:focus{
+        width: 15vw;
+    }
+    .container-country button{
+        width: 10vw;
+        height: 2.5vw;
+        margin: 1vw 0vw;
+    }
+
+    .container-cards{
+        margin: 0vw 0px;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-auto-rows: 27vw;
+        padding-top: 0px;
+    }
+    .card-coutry{
+        width: 15vw;
+        height: 22vw;
+        margin: 0vw 0px;
+        font-size: 1vw;
+        transform: translateY(1vw);
+        justify-content: start;
+        justify-self: center;
+        align-self: center;
+        margin-top: 0vw;
+    }
+    .card-coutry:hover{
+        width: 17vw;
+        transform: translateY(-1vw);
+        box-shadow: 0px 2px 10px #a5c00c;
+        transition: 0.3s;
+        background-color: #edf292;
+        height: 25vw;
+    
+    }
+    .card-coutry h3{
+        margin:1vw 0px;
+        font-size: 1.2vw;
+        font-family: Montserrat-Bold;
+    }
+    .card-coutry p{
+        margin:0.2vw 0px;
+        font-size: 1vw;
+        font-family: Montserrat-regular;
+    }
+    .card-coutry label{
+        margin:0.2vw 0px;
+        font-size: 1vw;
+        height: 0.4vw;
+        font-family: Montserrat-regular;
+    }
+    .card-coutry a{
+        height: 4vw;
+    }
+    .card-coutry:hover a{
+        height: 3vw;
+        transition: 0.3s;
+        visibility: visible;
+        color: black;
+    
+    }
+    .card-coutry:hover a:hover{
+        transition: 0.3s;
+        visibility: visible;
+        color: white;
+        background-color: #a5c00c;
+    
+    }
+    .img-card-coutry{
+        width: 100%;
+        height: 10vw;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        margin-top: 0px;
+        object-fit: cover;
+    }
 }
