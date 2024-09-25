@@ -1,0 +1,127 @@
+@font-face {
+    font-family: Montserrat-regular;
+    src: url('../components/fonts/Montserrat-Regular.ttf');
+}
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url('../components/fonts/Montserrat-Bold.ttf');
+}
+
+.container-border{
+    margin: 4vw 0vw;
+   background: linear-gradient(to right,#a5c00c, #465206);
+   width: 90%;
+   padding: 1px;
+   border-radius: 25px;
+   
+}
+.container-all{
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    padding: 2vw 0vw;
+    box-sizing: content-box;
+
+}
+.container-all img{
+    width: 95%;
+    border-radius: 15px;
+    box-shadow: 0px 5px 0px rgb(141, 141, 141);
+}
+.container-all h1{
+    font-family: Montserrat-Bold
+}
+.container-info{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-auto-rows: 18vw;
+}
+
+.info{
+    width: 95%;
+    height: auto;
+    justify-self: center;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1vw;
+    box-sizing: border-box;
+    box-shadow: 0px 3px 0px grey;
+    text-align: center;
+}
+
+.info h1{
+    text-align: center;
+    font-size: 2.4vw;
+    margin:0px;
+    border-bottom: solid 1px black;
+    width: 100%;
+    font-family: Montserrat-Bold;
+    margin-bottom: 1vw;
+}
+.info p{
+    font-size: 3vw;
+    margin:0px;
+    font-family: Montserrat-regular;
+}
+.timezones-ajust{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+}
+.timezones-ajust > *:only-child {
+    grid-column: 2; 
+}
+.back-button{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50px;
+    justify-self: center;
+    color: black;
+    transition: 0.1s;
+    font-family: Montserrat-Bold;
+}
+.back-button:hover{
+  cursor: pointer ;
+  background-color: #a5c00c;
+  color: white;
+  width: 17vw;
+  height: 17vw;
+  transition: 0.1s;
+
+}
+
+@media (min-width: 550px) {
+    .container-border{
+       width: 40%; 
+    }
+    .container-info{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-auto-rows: 10vw;
+    }
+    .info{
+        padding: 0.5vw;
+    }
+
+    .info h1{
+        text-align: center;
+        font-size: 1.3vw;
+        margin-bottom: 0.5vw;
+    }
+    .info p{
+        font-size: 1.1vw;
+    }
+    .back-button{
+        width: 5vw;
+        height: 5vw;
+    }
+    .back-button:hover{
+      width: 7vw;
+      height: 7vw;
+    }
+}
+

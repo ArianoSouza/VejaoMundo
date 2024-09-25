@@ -15,7 +15,7 @@ function Paises(){
     const [Population, setPopulation] = useState(-1);
     const [orderType, setOrderType] = useState(0);
     const [cleanFilter, setCleanFilter] = useState(false);
-    const [more,setMore] = useState(5)
+    const [more,setMore] = useState(10)
    
 
     
@@ -45,13 +45,12 @@ function Paises(){
     const setPop = (e) => {setPopulation(e.target.value)}
     const setOT= (e) => {setOrderType(e.target.value)}
     const clearAllFilters = () => {setCleanFilter(true);}
-    const changeRange = () =>{setMore(more+5)}
 
  
 
     const handleScroll = () => {
         if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight) {
-            setMore(more + 5);
+            setMore(more + 10);
         }
     };
 
