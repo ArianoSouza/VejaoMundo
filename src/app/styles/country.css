@@ -1,10 +1,10 @@
 @font-face {
     font-family: Montserrat-regular;
-    src: url('../components/fonts/Montserrat-Regular.ttf');
+    src: url('../../../public/myfonts/Montserrat-Regular.ttf');
 }
 @font-face {
     font-family: Montserrat-Bold;
-    src: url('../components/fonts/Montserrat-Bold.ttf');
+    src: url('../../../public/myfonts/Montserrat-Bold.ttf');
 }
 
 .container-border{
@@ -34,7 +34,7 @@
 .container-info{
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    grid-auto-rows: 18vw;
+    grid-auto-rows: auto+18vw;
 }
 
 .info{
@@ -63,6 +63,10 @@
     margin:0px;
     font-family: Montserrat-regular;
 }
+#languages{
+    word-break: break-all;
+}
+
 .timezones-ajust{
     display: grid;
     grid-template-columns: 30% 30% 30%;
@@ -101,7 +105,7 @@
     .container-info{
         display: grid;
         grid-template-columns: 33% 33% 33%;
-        grid-auto-rows: 10vw;
+        grid-auto-rows: auto+10vw;
     }
     .info{
         padding: 0.5vw;

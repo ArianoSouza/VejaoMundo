@@ -54,7 +54,7 @@ function Coutry({params: {id}}){
                         </div>
                         <div className='info'>
                             <h1>Idiomas falados:</h1> 
-                            <p>{Object.values(c.languages)}</p>
+                            <p id='languages'>{ c.languages ? `${Object.values(c.languages)}; ` : 'Não possui'}</p>
                         </div>
                         <div className='info'>
                             <h1>Moedas:</h1> 

@@ -13,9 +13,10 @@ function Paises(){
     const [changeregion, setChangeregion] = useState('');
     const [subRegion, setSubRegion] = useState('');
     const [Population, setPopulation] = useState(-1);
-    const [orderType, setOrderType] = useState(0);
+    const [orderType, setOrderType] = useState(1);
     const [cleanFilter, setCleanFilter] = useState(false);
     const [more,setMore] = useState(10)
+    const [loading, setLoading] = useState(true);
    
 
     
@@ -27,6 +28,7 @@ function Paises(){
             try {
                 const response = await axios.get('https://restcountries.com/v3.1/all');
                 setCountries(response.data);
+                setLoading(false)
             } catch (err) {
                 setError(err);
             }
@@ -42,8 +44,8 @@ function Paises(){
     const handleChange = (e) => {setChangevalue(e.target.value)}
     const setRegion = (e) => {setChangeregion(e.target.value)}
     const setSB = (e) => {setSubRegion(e.target.value)}
-    const setPop = (e) => {setPopulation(e.target.value)}
-    const setOT= (e) => {setOrderType(e.target.value)}
+    const setOT= (e) => {setOrderType(e.target.value); console.log(orderType)}
+    const setPop = (e) => {setPopulation(e.target.value);console.log(Population)}
     const clearAllFilters = () => {setCleanFilter(true);}
 
  
@@ -62,9 +64,39 @@ function Paises(){
     }, [more]);
     
     useEffect(()=>{
-
+        console.log(orderType)
         let fil = countries
 
+        if (orderType){
+            if (orderType == 1){
+                 fil = fil.sort((a,b)=> a.name.common.localeCompare(b.name.common))
+            }
+ 
+            else if(orderType == 2) {
+             fil = fil.sort((a,b)=> a.name.common.localeCompare(b.name.common))
+             fil = fil.reverse()
+            }
+ 
+            else if(orderType == 3) {
+             fil = fil.sort((a,b)=> a.population - b.population)
+             fil = fil.reverse()
+            }
+ 
+            else if(orderType == 4) {
+             fil = fil.sort((a,b)=> a.population - b.population)
+            }
+            else if(orderType == 5) {
+             fil = fil.sort((a,b)=> a.area - b.area)
+             fil = fil.reverse()
+            }
+ 
+            else if(orderType == 6) {
+             fil = fil.sort((a,b)=> a.area - b.area)
+            }
+            else{
+             fil = fil
+            }
+         }
 
         if (changevalue) {
             fil = fil.filter(f => f.name.common.toLowerCase().includes( changevalue.toLowerCase() ) )
@@ -97,36 +129,7 @@ function Paises(){
             }
         }
 
-        if (orderType){
-           if (orderType == 1){
-                fil = fil.sort((a,b)=> a.name.common.localeCompare(b.name.common))
-           }
-
-           else if(orderType == 2) {
-            fil = fil.sort((a,b)=> a.name.common.localeCompare(b.name.common))
-            fil = fil.reverse()
-           }
-
-           else if(orderType == 3) {
-            fil = fil.sort((a,b)=> a.population - b.population)
-            fil = fil.reverse()
-           }
-
-           else if(orderType == 4) {
-            fil = fil.sort((a,b)=> a.population - b.population)
-           }
-           else if(orderType == 5) {
-            fil = fil.sort((a,b)=> a.area - b.area)
-            fil = fil.reverse()
-           }
-
-           else if(orderType == 6) {
-            fil = fil.sort((a,b)=> a.area - b.area)
-           }
-           else{
-            fil = fil
-           }
-        }
+        
         if ((Population != 0 || subRegion != '' || changeregion!='') && cleanFilter == true){
             setChangeregion('')
             setSubRegion('')
@@ -137,7 +140,8 @@ function Paises(){
 
         setFilteramecountries(fil)
 
-    },[changevalue,changeregion,subRegion,countries, Population,orderType, cleanFilter])
+
+    },[changevalue,changeregion,subRegion,countries,Population,orderType, cleanFilter])
 
  
 
@@ -146,7 +150,7 @@ function Paises(){
         <div className='contain-all-info'>
             <div className='container-search'>
                 <input onChange={handleChange} placeholder='Pesquise pelo Nome...'/>
-                <select onChange={setOT}>
+                <select onChange={setOT} value={orderType}>
                                 <option value={1}>A-Z</option>
                                 <option value={2}>Z-A</option>
                                 <option value={3}>Maior população</option>
@@ -183,26 +187,26 @@ function Paises(){
                         </select>
                     </div>
                     <button onClick={clearAllFilters}>Limpar filtros</button>
-                    {filternamecountries.length > 0 ? (
-                    <div className='flex column align-center box-border container-cards'>
-                        { filternamecountries.map((country)=> (
-                            <div className=' card-coutry flex column align-center'>
-                                <img src={country.flags.svg} alt={`Flag of ${country.name.common}`} className='img-card-coutry'/>
-                                <h3>{country.name.common}</h3>
-                                <label>Capital:</label>
-                                <p>{country.capital ? country.capital[0] : "" }</p>
-                                <label>Região:</label>
-                                <p>{country.region}</p>
-                                <a href={`pages/country/${country.ccn3}`} >Veja mais</a>
-                            </div>
+                    {loading ? 'Carregando paises...' : filternamecountries.length > 0 ? (
 
-                            )
-                        ).slice(0,more)
-                    }
-                    </div>
-                    ): (
-                        <p>não há paises correspondentes! :/</p>
-                    ) } 
+                        <div className='flex column align-center box-border container-cards'>
+                            {filternamecountries.map((country)=> (
+
+                                <div className=' card-coutry flex column align-center'>
+                                    <img src={country.flags.svg} alt={`Flag of ${country.name.common}`} className='img-card-coutry'/>
+                                    <h3>{country.name.common}</h3>
+                                    <label>Capital:</label>
+                                    <p>{country.capital ? country.capital[0] : "" }</p>
+                                    <label>Região:</label>
+                                    <p>{country.region}</p>
+                                    <a href={`pages/country/${country.ccn3}`} >Veja mais</a>
+                                </div>
+
+                            )).slice(0,more)}    
+                        </div>
+                        
+                    ): (<p>não há paises correspondentes! :/</p> ) } 
+                    
                     
                 </div>
                
