@@ -3,7 +3,7 @@
 <p align="center">Veja o Mundo é uma aplicação web que visa entregar as principais informações sobre os paises ao redor do mundo </p>
 <p align="center">Ao pesquisar pelo nome do pais, ou filtrar por alguma característica, o usuário poderá selecionar o card e ser direcionado a uma pagina que mostra ainda mais informações</p>
 
-<h2 align="center">Como instalar</h2>
+<h2 align="center">Como executar</h2>
 
 Siga os passos abaixo para instalar e executar a aplicação:
 
