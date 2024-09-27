@@ -1,16 +1,45 @@
-# VejaoMundo
+<h1 align="center">VEJA O MUNDO</h1>
 
-<p>Veja o Mundo é uma aplicação web que visa entregar as principais informações sobre os paises ao redor do mundo </p>
-<p>Ao pesquisar pelo nome do pais, ou filtrar por alguma característica, o usuário poderá selecionar o card e ser direcionado a uma pagina que mostra ainda mais informações</p>
+<p align="center">Veja o Mundo é uma aplicação web que visa entregar as principais informações sobre os paises ao redor do mundo </p>
+<p align="center">Ao pesquisar pelo nome do pais, ou filtrar por alguma característica, o usuário poderá selecionar o card e ser direcionado a uma pagina que mostra ainda mais informações</p>
 
-<h2 align=center>Como instalar</h2>
-<ol>
-  <li>Abra o terminal cmd ou o terminal da sua IDE dentro de uma pasta</li>
-  <li>Clone o repositório dentro da pasta utilizando o terminal e o comando: `git clone https://github.com/ArianoSouza/VejaoMundo.git` </li>
-  <li> Utilize o comando `cd vejaomundo` no terminal para ir para a pasta principal</li>
-  <li> Instale as dependências utilizando o comando `npm i` no terminal</li>
-  <li> Inicie o servidor usando o comando `npm run dev`</li>
-  <li>Abra o navegador e digite na barra de pesquisa 'localhost:3000'</li>
-  <li>Para fechar a aplicação basta ir no terminal e usar CTRL+C para parar a execução do código</li>
-</ol>
+<h2 align="center">Como instalar</h2>
+
+Siga os passos abaixo para instalar e executar a aplicação:
+
+1. **Abra o terminal**:
+   - Abra o terminal CMD ou o terminal da sua IDE dentro de uma pasta.
+
+2. **Clone o repositório**:
+   - Execute o comando:
+     ```bash
+     git clone https://github.com/ArianoSouza/VejaoMundo.git
+     ```
+
+3. **Acesse a pasta do projeto**:
+   - Execute o comando:
+     ```bash
+     cd vejaomundo
+     ```
+
+4. **Instale as dependências**:
+   - Execute o comando:
+     ```bash
+     npm i
+     ```
+
+5. **Inicie o servidor**:
+   - Use o comando:
+     ```bash
+     npm run dev
+     ```
+
+6. **Abra o navegador**:
+   - Digite na barra de pesquisa:
+     ```
+     localhost:3000
+     ```
+<h2 align="center"> Como fechar a aplicação</h2>
+  <p align="center">Vá ao terminal e use `CTRL+C` para parar a execução do código.</p>
+
 
