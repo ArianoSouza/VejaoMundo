@@ -75,8 +75,7 @@ function Coutry({params: {id}}){
                         <a href={`/`} className='back-button' >Home</a>
                     </div>
                 </div>
-            </div>
-                    
+            </div>       
             )
         }
         </div>

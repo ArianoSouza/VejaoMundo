@@ -44,7 +44,7 @@ function Paises(){
     const handleChange = (e) => {setChangevalue(e.target.value)}
     const setRegion = (e) => {setChangeregion(e.target.value)}
     const setSB = (e) => {setSubRegion(e.target.value)}
-    const setOT= (e) => {setOrderType(e.target.value); console.log(orderType)}
+    const setOT= (e) => {setOrderType(Number(e.target.value)); console.log(orderType)}
     const setPop = (e) => {setPopulation(e.target.value);console.log(Population)}
     const clearAllFilters = () => {setCleanFilter(true);}
 
@@ -138,7 +138,38 @@ function Paises(){
             fil = countries
         }
 
-        setFilteramecountries(fil)
+        if (orderType){
+            if (orderType == 1){
+                 fil = fil.sort((a,b)=> a.name.common.localeCompare(b.name.common))
+            }
+ 
+            else if(orderType == 2) {
+             fil = fil.sort((a,b)=> a.name.common.localeCompare(b.name.common))
+             fil = fil.reverse()
+            }
+ 
+            else if(orderType == 3) {
+             fil = fil.sort((a,b)=> a.population - b.population)
+             fil = fil.reverse()
+            }
+ 
+            else if(orderType == 4) {
+             fil = fil.sort((a,b)=> a.population - b.population)
+            }
+            else if(orderType == 5) {
+             fil = fil.sort((a,b)=> a.area - b.area)
+             fil = fil.reverse()
+            }
+ 
+            else if(orderType == 6) {
+             fil = fil.sort((a,b)=> a.area - b.area)
+            }
+            else{
+             fil = fil
+            }
+         }
+
+        setFilteramecountries(fil.slice(0,more))
 
 
     },[changevalue,changeregion,subRegion,countries,Population,orderType, cleanFilter])
@@ -187,8 +218,8 @@ function Paises(){
                         </select>
                     </div>
                     <button onClick={clearAllFilters}>Limpar filtros</button>
-                    {loading ? 'Carregando paises...' : filternamecountries.length > 0 ? (
-
+                    {loading ? 'Carregando paises...' : 
+                        filternamecountries.length > 0 ? (
                         <div className='flex column align-center box-border container-cards'>
                             {filternamecountries.map((country)=> (
 
@@ -202,10 +233,11 @@ function Paises(){
                                     <a href={`pages/country/${country.ccn3}`} >Veja mais</a>
                                 </div>
 
-                            )).slice(0,more)}    
+                            ))}    
                         </div>
                         
-                    ): (<p>não há paises correspondentes! :/</p> ) } 
+                    ): 
+                        (<p>não há paises correspondentes! :/</p> ) } 
                     
                     
                 </div>
