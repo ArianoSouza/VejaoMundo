@@ -6,9 +6,11 @@
 <h2 align="center">Como executar</h2>
 
 <h3 align="center">Requisitos</h3>
-1. Node: https://nodejs.org/pt
-2. Npm (Ao instalar o node ele automaticamente instala o NPM)
-3. git: https://git-scm.com/downloads
+<p align="center">**Node** https://nodejs.org/pt</p>
+<p align="center">Npm (Ao instalar o node ele automaticamente instala o NPM)</p>
+<p align="center">git: https://git-scm.com/downloads</p>
+<br>
+<br>
 
 Siga os passos abaixo para instalar e executar a aplicação:
 
